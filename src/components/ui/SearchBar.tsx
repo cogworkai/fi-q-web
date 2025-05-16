@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 
 export const SearchBar: React.FC = () => {
@@ -20,8 +21,8 @@ export const SearchBar: React.FC = () => {
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Ask Nova anything..."
-          className="w-full px-6 py-4 pr-12 text-lg border-2 border-[#080808] rounded-full focus:outline-none focus:ring-2 focus:ring-[#110B53]"
+          placeholder="Search for financial topics, features, or guides..."
+          className="w-full px-6 py-4 pr-12 text-lg border-2 border-[#080808] rounded-full focus:outline-none focus:ring-2 focus:ring-[#FFC726]"
         />
         <button
           type="submit"

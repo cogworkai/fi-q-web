@@ -6,7 +6,7 @@ import Features from "@/components/sections/Features";
 import Footer from "@/components/sections/Footer";
 import SearchBar from "@/components/ui/SearchBar";
 
-// Placeholder image URL - replace with actual image in production
+// Finance dashboard image URL - replace with actual finance app image in production
 const heroImageUrl =
   "https://cdn.builder.io/api/v1/image/assets/TEMP/cdaeea5cb03fa0184784e428de3e074cc6ba6657?placeholderIfAbsent=true";
 

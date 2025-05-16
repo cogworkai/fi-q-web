@@ -25,7 +25,7 @@ export const NewsletterForm: React.FC = () => {
     <div className="w-full max-w-[600px] mt-12">
       <form onSubmit={handleSubmit} className="flex flex-col items-center">
         <h3 className="text-2xl font-medium text-[#080808] mb-4">
-          Stay updated with Ace
+          Stay updated with Cheddar
         </h3>
         <div className="w-full flex flex-col sm:flex-row gap-4">
           <input
@@ -33,7 +33,7 @@ export const NewsletterForm: React.FC = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            className="flex-1 px-4 py-3 border-2 border-[#080808] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#110B53]"
+            className="flex-1 px-4 py-3 border-2 border-[#080808] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FFC726]"
             required
           />
           <CustomButton type="submit" className="px-6 py-3">

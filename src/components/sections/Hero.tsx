@@ -21,24 +21,23 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
       {/* Content overlay */}
       <div className="relative z-10 flex flex-col items-center text-center pt-[82px] px-5 w-full">
         <h1 className="font-['Lexend'] text-[66px] font-bold text-[#080808] leading-[74px] max-w-[1500px] mb-3.5 max-md:text-5xl max-md:leading-[56px] max-sm:text-4xl max-sm:leading-[44px]">
-          Effortless Browsing, Intelligent Results.
+          Your Finances on Autopilot
         </h1>
         <p className="font-['DM_Sans'] text-[30px] font-light text-[#080808] leading-[40px] tracking-[1%] max-w-[1245px] mb-[58px] max-md:text-2xl max-md:leading-8 max-sm:text-lg max-sm:leading-7">
-          The Browser that skips online clutter and makes information easier to
-          access.
+          Open source, privacy-focused personal finance management that puts you in control.
         </p>
         <CustomButton 
           size="lg" 
           className="text-[30.08px] leading-[34.08px] px-[47px] py-[24px] font-['Lexend'] font-medium"
         >
-          Download Now
+          Download Cheddar
         </CustomButton>
       </div>
       
       <div className="relative z-10 w-full max-w-[1270px] mx-auto mt-auto pb-10">
         <img
           src={heroImageUrl}
-          alt="hero image"
+          alt="Cheddar app dashboard"
           className="w-full h-auto filter drop-shadow-[0px_0px_76px_rgba(61,_57,_93,_0.25)]"
         />
       </div>
