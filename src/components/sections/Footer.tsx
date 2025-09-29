@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
                 <path d="M28 16C28 21.5228 23.5228 26 18 26C12.4772 26 8 21.5228 8 16C8 10.4772 12.4772 6 18 6C23.5228 6 28 10.4772 28 16Z" fill="#FFDB5C"/>
                 <path d="M32 24C32 29.5228 27.5228 34 22 34C16.4772 34 12 29.5228 12 24C12 18.4772 16.4772 14 22 14C27.5228 14 32 18.4772 32 24Z" fill="#FFB800"/>
               </svg>
-              <span className="text-3xl font-['Lexend'] font-bold text-[#080808]">Cheddar</span>
+              <span className="text-3xl font-['Lexend'] font-bold text-[#080808]">Fi-Q</span>
             </div>
             <p className="text-[#080808] text-lg font-light mb-6">
               Open source, privacy-focused personal finance management that puts you in control.
@@ -102,7 +102,7 @@ export const Footer: React.FC = () => {
 
         <div className="mt-16 pt-8 border-t border-[#080808] flex flex-col md:flex-row justify-between items-center">
           <p className="text-[#080808] font-light mb-4 md:mb-0">
-            © {new Date().getFullYear()} Cheddar Finance. All rights reserved.
+            © {new Date().getFullYear()} Fi-Q. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link

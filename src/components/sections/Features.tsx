@@ -8,13 +8,13 @@ export const Features: React.FC = () => {
       id: 1,
       title: "Automatic Tracking",
       description:
-        "Connect your accounts securely and let Cheddar automatically categorize and track your transactions, saving you hours of manual entry.",
+        "Connect your accounts securely and let Fi-Q automatically categorize and track your transactions, saving you hours of manual entry.",
     },
     {
       id: 2,
       title: "Bill Management",
       description:
-        "Never miss a payment again. Cheddar reminds you of upcoming bills and can even suggest optimizing payment dates based on your cash flow.",
+        "Never miss a payment again. Fi-Q reminds you of upcoming bills and can even suggest optimizing payment dates based on your cash flow.",
     },
     {
       id: 3,
@@ -26,7 +26,7 @@ export const Features: React.FC = () => {
       id: 4,
       title: "Privacy First",
       description:
-        "Your financial data belongs to you. Cheddar is open source and stores all your information locally, never sharing it with third parties.",
+        "Your financial data belongs to you. Fi-Q is open source and stores all your information locally, never sharing it with third parties.",
     },
   ];
 
@@ -34,10 +34,10 @@ export const Features: React.FC = () => {
     <div className="flex flex-col items-center pt-[156px] px-5">
       <div className="flex flex-col items-center text-center mb-[86px]">
         <h2 className="text-6xl font-semibold text-[#080808] leading-[70px] mb-4 max-md:text-5xl max-md:leading-[56px] max-sm:text-4xl max-sm:leading-[44px]">
-          Meet Cheddar
+          Meet Fi-Q
         </h2>
         <p className="text-[28px] text-[#080808] font-light leading-10 max-w-[652px] max-md:text-2xl max-md:leading-8 max-sm:text-lg max-sm:leading-7">
-          Managing your personal finances has never been easier. Cheddar helps you keep track of your money, automate your financial life, and plan for your future.
+          Managing your personal finances has never been easier. Fi-Q helps you keep track of your money, automate your financial life, and plan for your future.
         </p>
       </div>
       <div className="flex flex-wrap justify-center gap-8 max-w-[1569px] px-5">

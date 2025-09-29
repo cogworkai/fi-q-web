@@ -30,14 +30,14 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
           size="lg" 
           className="text-[30.08px] leading-[34.08px] px-[47px] py-[24px] font-['Lexend'] font-medium"
         >
-          Download Cheddar
+          Download Fi-Q
         </CustomButton>
       </div>
       
       <div className="relative z-10 w-full max-w-[1270px] mx-auto mt-auto pb-10">
         <img
           src={heroImageUrl}
-          alt="Cheddar app dashboard"
+          alt="Fi-Q app dashboard"
           className="w-full h-auto filter drop-shadow-[0px_0px_76px_rgba(61,_57,_93,_0.25)]"
         />
       </div>

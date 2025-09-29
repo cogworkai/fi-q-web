@@ -25,7 +25,7 @@ export const NewsletterForm: React.FC = () => {
     <div className="w-full max-w-[600px] mt-12">
       <form onSubmit={handleSubmit} className="flex flex-col items-center">
         <h3 className="text-2xl font-medium text-[#080808] mb-4">
-          Stay updated with Cheddar
+          Stay updated with Fi-Q
         </h3>
         <div className="w-full flex flex-col sm:flex-row gap-4">
           <input
