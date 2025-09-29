@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
               <span className="text-3xl font-['Lexend'] font-bold text-[#080808]">Fi-Q</span>
             </div>
             <p className="text-[#080808] text-lg font-light mb-6">
-              Open source, privacy-focused personal finance management that puts you in control.
+              Personal finance, figured out. 100% private, adapts to your way of thinking, and automates the tedious parts so you can focus on what matters.
             </p>
             <NewsletterForm />
           </div>

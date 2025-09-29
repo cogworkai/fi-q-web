@@ -21,10 +21,10 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
       {/* Content overlay */}
       <div className="relative z-10 flex flex-col items-center text-center pt-[82px] px-5 w-full">
         <h1 className="font-['Lexend'] text-[66px] font-bold text-[#080808] leading-[74px] max-w-[1500px] mb-3.5 max-md:text-5xl max-md:leading-[56px] max-sm:text-4xl max-sm:leading-[44px]">
-          Your Finances on Autopilot
+          Personal Finance, Figured Out
         </h1>
         <p className="font-['DM_Sans'] text-[30px] font-light text-[#080808] leading-[40px] tracking-[1%] max-w-[1245px] mb-[58px] max-md:text-2xl max-md:leading-8 max-sm:text-lg max-sm:leading-7">
-          Open source, privacy-focused personal finance management that puts you in control.
+          Fi-Q learns how you think about money and automates the tedious parts—from categorizing expenses to flagging unwanted subscriptions. 100% private. Zero data mining. Your way.
         </p>
         <CustomButton 
           size="lg" 

@@ -6,27 +6,27 @@ export const Features: React.FC = () => {
   const features = [
     {
       id: 1,
-      title: "Automatic Tracking",
+      title: "Smart Categorization",
       description:
-        "Connect your accounts securely and let Fi-Q automatically categorize and track your transactions, saving you hours of manual entry.",
+        "Fi-Q learns your spending patterns and automatically categorizes transactions. No more tedious manual entry—just clarity about where your money goes.",
     },
     {
       id: 2,
-      title: "Bill Management",
+      title: "Subscription Detective",
       description:
-        "Never miss a payment again. Fi-Q reminds you of upcoming bills and can even suggest optimizing payment dates based on your cash flow.",
+        "Fi-Q flags unwanted subscriptions and recurring charges you might have forgotten about, helping you eliminate expenses you don't need.",
     },
     {
       id: 3,
-      title: "Investment Dashboard",
+      title: "Adaptive Budgeting",
       description:
-        "Track all your investments in one place with real-time updates and performance metrics, helping you make informed financial decisions.",
+        "Instead of forcing you into rigid budgets, Fi-Q builds budgets around your goals and adapts to how you actually think about money.",
     },
     {
       id: 4,
-      title: "Privacy First",
+      title: "100% Private",
       description:
-        "Your financial data belongs to you. Fi-Q is open source and stores all your information locally, never sharing it with third parties.",
+        "Your financial data is yours alone. Fi-Q never sells your information or mines your data to push products. Open source and completely private.",
     },
   ];
 
@@ -34,10 +34,10 @@ export const Features: React.FC = () => {
     <div className="flex flex-col items-center pt-[156px] px-5">
       <div className="flex flex-col items-center text-center mb-[86px]">
         <h2 className="text-6xl font-semibold text-[#080808] leading-[70px] mb-4 max-md:text-5xl max-md:leading-[56px] max-sm:text-4xl max-sm:leading-[44px]">
-          Meet Fi-Q
+          From Grind to Clarity
         </h2>
         <p className="text-[28px] text-[#080808] font-light leading-10 max-w-[652px] max-md:text-2xl max-md:leading-8 max-sm:text-lg max-sm:leading-7">
-          Managing your personal finances has never been easier. Fi-Q helps you keep track of your money, automate your financial life, and plan for your future.
+          Spend less time tracking expenses and more time understanding your money. Fi-Q transforms financial management from a chore into insight.
         </p>
       </div>
       <div className="flex flex-wrap justify-center gap-8 max-w-[1569px] px-5">
