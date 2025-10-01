@@ -1,4 +1,3 @@
-
 import React from "react";
 import { cn } from "@/lib/utils";
 
@@ -15,15 +14,25 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   ...props
 }) => {
+  const baseStyles = "font-['Lexend'] font-semibold rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95";
+  
+  const variants = {
+    primary: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-glow border-2 border-primary/20",
+    secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/90 border-2 border-secondary/30"
+  };
+
+  const sizes = {
+    sm: "text-sm px-5 py-2",
+    md: "text-base px-7 py-3",
+    lg: "text-xl md:text-2xl px-10 py-4 md:px-12 md:py-5"
+  };
+
   return (
     <button
       className={cn(
-        "bg-[#FDFDFD] text-[#080808] rounded-[64px] border-2 border-[#080808] font-['Lexend'] font-medium hover:bg-[#FFC726] hover:border-[#080808] transition-colors",
-        {
-          "text-[17px] leading-[19px] px-[27px] py-[13px]": size === "md",
-          "text-3xl px-[35px] py-6 rounded-[64px] max-md:text-2xl max-md:py-5 max-sm:text-xl max-sm:py-4":
-            size === "lg",
-        },
+        baseStyles,
+        variants[variant],
+        sizes[size],
         className,
       )}
       {...props}
