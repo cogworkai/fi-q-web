@@ -23,7 +23,7 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
   const content = headlines[variant];
 
   return (
-    <div className="relative w-full min-h-screen flex flex-col justify-between overflow-hidden gradient-hero">
+    <div className="relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden gradient-hero">
       {/* Animated background elements */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
@@ -32,7 +32,7 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
       </div>
       
       {/* Content overlay */}
-      <div className="relative z-10 flex flex-col items-center text-center pt-24 px-5 w-full animate-fade-in">
+      <div className="relative z-10 flex flex-col items-center text-center px-5 w-full animate-fade-in">
         <div className="inline-block mb-6 px-6 py-2 rounded-full glass-effect border border-primary/20">
           <span className="text-sm font-medium text-primary">
             🚀 Now in Beta • Join the Waitlist
@@ -87,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
         </div>
       </div>
       
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto mt-20 pb-10 px-5 animate-slide-up" style={{ animationDelay: '0.8s' }}>
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto mt-12 px-5 animate-slide-up" style={{ animationDelay: '0.8s' }}>
         <div className="glass-effect rounded-3xl p-2 shadow-elegant">
           <img
             src={heroImageUrl}
