@@ -106,7 +106,7 @@ export const Footer: React.FC = () => {
           </p>
           <div className="flex gap-6">
             <Link
-              to="#"
+              to="/privacy"
               className="text-[#080808] font-light hover:text-[#FFC726]"
             >
               Privacy Policy
