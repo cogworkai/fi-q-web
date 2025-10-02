@@ -112,7 +112,7 @@ export const Footer: React.FC = () => {
               Privacy Policy
             </Link>
             <Link
-              to="#"
+              to="/terms"
               className="text-[#080808] font-light hover:text-[#FFC726]"
             >
               Terms of Service
