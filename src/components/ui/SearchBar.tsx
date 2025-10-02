@@ -10,16 +10,6 @@ export const SearchBar: React.FC = () => {
       setSearchQuery("");
     }
   };
-  return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md">
-      <input
-        type="text"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Search..."
-        className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground"
-      />
-    </form>
-  );
+  return;
 };
 export default SearchBar;
