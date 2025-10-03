@@ -41,7 +41,7 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
           </span>
         </div>
         
-        <h1 className="font-['Lexend'] text-6xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary leading-tight max-w-[1400px] mb-6 animate-slide-up">
+        <h1 className="font-['Lexend'] text-6xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary leading-tight max-w-[1400px] mb-6 animate-slide-up py-2">
           {content.title}
         </h1>
         
