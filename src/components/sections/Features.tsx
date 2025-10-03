@@ -53,7 +53,7 @@ export const Features: React.FC = () => {
         {features.map((feature, index) => (
           <div 
             key={feature.id} 
-            className="animate-slide-up"
+            className="animate-slide-up h-full"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             <FeatureCard
