@@ -1,7 +1,6 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import NewsletterForm from "@/components/ui/NewsletterForm";
 
 export const Footer: React.FC = () => {
   return (
@@ -17,10 +16,9 @@ export const Footer: React.FC = () => {
               </svg>
               <span className="text-3xl font-['Lexend'] font-bold text-[#080808]">Fi-Q</span>
             </div>
-            <p className="text-[#080808] text-lg font-light mb-6">
+            <p className="text-[#080808] text-lg font-light">
               Personal finance, figured out. 100% private, adapts to your way of thinking, and automates the tedious parts so you can focus on what matters.
             </p>
-            <NewsletterForm />
           </div>
 
           <div>
