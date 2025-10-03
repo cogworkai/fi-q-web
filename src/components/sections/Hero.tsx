@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import CustomButton from "@/components/ui/CustomButton";
 import { useABTest } from "@/hooks/useABTest";
+import { WaitlistDialog } from "@/components/ui/WaitlistDialog";
 
 interface HeroProps {
   heroImageUrl: string;
 }
 
 export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
   const variant = useABTest({ testName: 'hero_headline', variants: ['A', 'B'] });
 
   const headlines = {
@@ -52,6 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
             size="lg" 
             variant="primary"
             className="shadow-glow hover:shadow-elegant transition-all duration-300"
+            onClick={() => setIsWaitlistOpen(true)}
           >
             Join Waitlist
           </CustomButton>
@@ -96,6 +99,8 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
           />
         </div>
       </div>
+      
+      <WaitlistDialog open={isWaitlistOpen} onOpenChange={setIsWaitlistOpen} />
     </div>
   );
 };
