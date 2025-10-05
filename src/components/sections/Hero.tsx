@@ -29,8 +29,8 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
       
       {/* Content overlay */}
       <div className="relative z-10 flex flex-col items-center text-center px-5 w-full animate-fade-in">
-        <div className="inline-block mb-6 px-8 py-3 rounded-full glass-effect border-2 border-primary/40 shadow-glow animate-glow-pulse">
-          <span className="text-base font-semibold text-primary">
+        <div className="inline-block mb-6 px-6 py-2 rounded-full glass-effect border border-primary/20">
+          <span className="text-sm font-medium text-primary">
             🚀 Now in Beta • Join the Waitlist
           </span>
         </div>
