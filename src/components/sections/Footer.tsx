@@ -57,11 +57,7 @@ export const Footer: React.FC = () => {
                   Blog
                 </Link>
               </li>
-              <li>
-                <Link to="#" className="text-[#080808] font-light hover:text-[#FFC726]">
-                  Open Source
-                </Link>
-              </li>
+              
               <li>
                 <Link to="#" className="text-[#080808] font-light hover:text-[#FFC726]">
                   Contact
