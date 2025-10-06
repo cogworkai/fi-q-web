@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import CustomButton from "@/components/ui/CustomButton";
 import { useABTest } from "@/hooks/useABTest";
+import { WaitlistDialog } from "@/components/ui/WaitlistDialog";
 
 interface HeroProps {
   heroImageUrl: string;
 }
 
 export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
   const variant = useABTest({ testName: 'hero_headline', variants: ['A', 'B'] });
 
   const headlines = {
@@ -23,13 +25,7 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
   const content = headlines[variant];
 
   return (
-    <div className="relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden gradient-hero">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl animate-glow-pulse" />
-      </div>
+    <div className="relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden">
       
       {/* Content overlay */}
       <div className="relative z-10 flex flex-col items-center text-center px-5 w-full animate-fade-in">
@@ -39,7 +35,7 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
           </span>
         </div>
         
-        <h1 className="font-['Lexend'] text-6xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary leading-tight max-w-[1400px] mb-6 animate-slide-up">
+        <h1 className="font-['Lexend'] text-6xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary leading-tight max-w-[1400px] mb-6 animate-slide-up py-2">
           {content.title}
         </h1>
         
@@ -52,6 +48,7 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
             size="lg" 
             variant="primary"
             className="shadow-glow hover:shadow-elegant transition-all duration-300"
+            onClick={() => setIsWaitlistOpen(true)}
           >
             Join Waitlist
           </CustomButton>
@@ -96,6 +93,8 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
           />
         </div>
       </div>
+      
+      <WaitlistDialog open={isWaitlistOpen} onOpenChange={setIsWaitlistOpen} />
     </div>
   );
 };

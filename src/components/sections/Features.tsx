@@ -35,7 +35,7 @@ export const Features: React.FC = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center py-24 md:py-32 px-5 bg-muted/30">
+    <section className="relative flex flex-col items-center py-24 md:py-32 px-5 overflow-hidden">
       <div className="flex flex-col items-center text-center mb-16 md:mb-20 animate-fade-in">
         <div className="inline-block mb-4 px-5 py-2 rounded-full glass-effect border border-primary/20">
           <span className="text-sm font-medium text-primary">
@@ -53,7 +53,7 @@ export const Features: React.FC = () => {
         {features.map((feature, index) => (
           <div 
             key={feature.id} 
-            className="animate-slide-up"
+            className="animate-slide-up h-full"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             <FeatureCard
