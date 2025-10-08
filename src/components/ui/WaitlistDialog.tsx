@@ -76,7 +76,7 @@ export const WaitlistDialog: React.FC<WaitlistDialogProps> = ({ open, onOpenChan
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold">Join the Waitlist</DialogTitle>
           <DialogDescription>
-            Be the first to know when Fi-Q launches. Enter your email below to join our exclusive waitlist.
+            Be the first to know when Fi Q launches. Enter your email below to join our exclusive waitlist.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">

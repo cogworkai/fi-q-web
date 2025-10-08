@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
                 <path d="M28 16C28 21.5228 23.5228 26 18 26C12.4772 26 8 21.5228 8 16C8 10.4772 12.4772 6 18 6C23.5228 6 28 10.4772 28 16Z" fill="#FFDB5C" />
                 <path d="M32 24C32 29.5228 27.5228 34 22 34C16.4772 34 12 29.5228 12 24C12 18.4772 16.4772 14 22 14C27.5228 14 32 18.4772 32 24Z" fill="#FFB800" />
               </svg>
-              <span className="text-3xl font-['Lexend'] font-bold text-[#080808]">Fi-Q</span>
+              <span className="text-3xl font-['Lexend'] font-bold text-[#080808]">Fi Q</span>
             </div>
             <p className="text-[#080808] text-lg font-light">
               Personal finance, figured out. 100% private, adapts to your way of thinking, and automates the tedious parts so you can focus on what matters.

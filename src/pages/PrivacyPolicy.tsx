@@ -19,7 +19,7 @@ const PrivacyPolicy: React.FC = () => {
               <strong>Last Updated:</strong> {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
             </p>
             <p className="text-lg font-light leading-relaxed">
-              At Fi-Q, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your personal information when you use our personal finance application.
+              At Fi Q, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your personal information when you use our personal finance application.
             </p>
           </section>
 
@@ -76,7 +76,7 @@ const PrivacyPolicy: React.FC = () => {
               4. AI and Machine Learning
             </h2>
             <p className="text-lg font-light leading-relaxed">
-              Fi-Q uses AI to categorize expenses, identify patterns, and provide personalized insights. All AI processing is done with your privacy in mind, and your financial data is never used to train models that benefit other users or third parties.
+              Fi Q uses AI to categorize expenses, identify patterns, and provide personalized insights. All AI processing is done with your privacy in mind, and your financial data is never used to train models that benefit other users or third parties.
             </p>
           </section>
 
@@ -119,7 +119,7 @@ const PrivacyPolicy: React.FC = () => {
               8. Third-Party Services
             </h2>
             <p className="text-lg font-light leading-relaxed">
-              Fi-Q may integrate with third-party financial institutions to import transaction data. These connections are secured through bank-level encryption, and we only access the data you explicitly authorize.
+              Fi Q may integrate with third-party financial institutions to import transaction data. These connections are secured through bank-level encryption, and we only access the data you explicitly authorize.
             </p>
           </section>
 
@@ -128,7 +128,7 @@ const PrivacyPolicy: React.FC = () => {
               9. Children's Privacy
             </h2>
             <p className="text-lg font-light leading-relaxed">
-              Fi-Q is not intended for children under 13 years of age. We do not knowingly collect personal information from children.
+              Fi Q is not intended for children under 13 years of age. We do not knowingly collect personal information from children.
             </p>
           </section>
 
@@ -137,7 +137,7 @@ const PrivacyPolicy: React.FC = () => {
               10. Changes to This Policy
             </h2>
             <p className="text-lg font-light leading-relaxed">
-              We may update this Privacy Policy from time to time. We will notify you of significant changes via email or through the application. Your continued use of Fi-Q after changes constitutes acceptance of the updated policy.
+              We may update this Privacy Policy from time to time. We will notify you of significant changes via email or through the application. Your continued use of Fi Q after changes constitutes acceptance of the updated policy.
             </p>
           </section>
 

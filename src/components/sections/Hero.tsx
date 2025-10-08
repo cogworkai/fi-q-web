@@ -14,7 +14,7 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
   const headlines = {
     A: {
       title: "Personal Finance, Figured Out",
-      subtitle: "Fi-Q learns how you think about money and automates the tedious parts—from categorizing expenses to flagging unwanted subscriptions. 100% private. Zero data mining. Your way."
+      subtitle: "Fi Q learns how you think about money and automates the tedious parts—from categorizing expenses to flagging unwanted subscriptions. 100% private. Zero data mining. Your way."
     },
     B: {
       title: "Stop Tracking. Start Living.",
@@ -29,6 +29,12 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
       
       {/* Content overlay */}
       <div className="relative z-10 flex flex-col items-center text-center px-5 w-full animate-fade-in">
+        <img 
+          src="/fi-q-512.svg" 
+          alt="Fi Q Logo" 
+          className="h-64 w-auto mb-16"
+        />
+        
         <div className="inline-block mb-6 px-6 py-2 rounded-full glass-effect border border-primary/20">
           <span className="text-sm font-medium text-primary">
             🚀 Now in Beta • Join the Waitlist
@@ -66,7 +72,7 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
             <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
             </svg>
-            <span>100% Private</span>
+            <span>Privacy First</span>
           </div>
           <div className="flex items-center gap-2">
             <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
@@ -88,7 +94,7 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
         <div className="glass-effect rounded-3xl p-2 shadow-elegant">
           <img
             src={heroImageUrl}
-            alt="Fi-Q app dashboard showing intelligent expense categorization and insights"
+            alt="Fi Q app dashboard showing intelligent expense categorization and insights"
             className="w-full h-auto rounded-2xl"
           />
         </div>

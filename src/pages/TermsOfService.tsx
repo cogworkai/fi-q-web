@@ -18,7 +18,7 @@ const TermsOfService: React.FC = () => {
               <strong>Last Updated:</strong> {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
             </p>
             <p className="text-lg">
-              Welcome to Fi-Q. By accessing or using our application, you agree to be bound by these Terms of Service. Please read them carefully.
+              Welcome to Fi Q. By accessing or using our application, you agree to be bound by these Terms of Service. Please read them carefully.
             </p>
           </section>
 
@@ -27,7 +27,7 @@ const TermsOfService: React.FC = () => {
               1. Acceptance of Terms
             </h2>
             <p className="mb-3">
-              By creating an account or using Fi-Q, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, please do not use our service.
+              By creating an account or using Fi Q, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, please do not use our service.
             </p>
             <p>
               These terms apply to all users, including visitors, registered users, and any other form of access to the service.
@@ -39,7 +39,7 @@ const TermsOfService: React.FC = () => {
               2. Service Description
             </h2>
             <p className="mb-3">
-              Fi-Q is a personal finance management application that helps you:
+              Fi Q is a personal finance management application that helps you:
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Track expenses and income automatically</li>
@@ -63,7 +63,7 @@ const TermsOfService: React.FC = () => {
             </h3>
             <ul className="list-disc pl-6 space-y-2 mb-4">
               <li>You must provide accurate and complete information when creating an account</li>
-              <li>You must be at least 18 years old to use Fi-Q</li>
+              <li>You must be at least 18 years old to use Fi Q</li>
               <li>You are responsible for maintaining the security of your account credentials</li>
               <li>You are responsible for all activities that occur under your account</li>
               <li>One person or legal entity may maintain no more than one account</li>
@@ -122,14 +122,14 @@ const TermsOfService: React.FC = () => {
               6.1 Our Content
             </h3>
             <p className="mb-3">
-              The service, including all content, features, and functionality (including but not limited to software, text, displays, images, and design), is owned by Fi-Q and is protected by copyright, trademark, and other intellectual property laws.
+              The service, including all content, features, and functionality (including but not limited to software, text, displays, images, and design), is owned by Fi Q and is protected by copyright, trademark, and other intellectual property laws.
             </p>
 
             <h3 className="text-xl font-medium text-foreground mb-2">
               6.2 Your Content
             </h3>
             <p className="mb-2">
-              You retain all rights to the financial data and information you input into Fi-Q. By using the service, you grant us a limited license to process and display your data solely for the purpose of providing the service to you.
+              You retain all rights to the financial data and information you input into Fi Q. By using the service, you grant us a limited license to process and display your data solely for the purpose of providing the service to you.
             </p>
           </section>
 
@@ -138,7 +138,7 @@ const TermsOfService: React.FC = () => {
               7. Financial Disclaimer
             </h2>
             <p className="mb-3">
-              <strong>Fi-Q is not a financial advisor.</strong> The service provides tools and insights to help you manage your finances, but:
+              <strong>Fi Q is not a financial advisor.</strong> The service provides tools and insights to help you manage your finances, but:
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>We do not provide financial, investment, tax, or legal advice</li>
@@ -157,7 +157,7 @@ const TermsOfService: React.FC = () => {
               To the fullest extent permitted by law:
             </p>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Fi-Q is provided "as is" without warranties of any kind</li>
+              <li>Fi Q is provided "as is" without warranties of any kind</li>
               <li>We are not liable for any indirect, incidental, special, or consequential damages</li>
               <li>We are not responsible for any financial losses resulting from the use of our service</li>
               <li>Our total liability shall not exceed the amount you paid us in the past 12 months</li>
@@ -220,7 +220,7 @@ const TermsOfService: React.FC = () => {
               12. Governing Law
             </h2>
             <p>
-              These Terms of Service shall be governed by and construed in accordance with the laws of the jurisdiction in which Fi-Q operates, without regard to its conflict of law provisions. Any disputes arising from these terms shall be resolved in the courts of that jurisdiction.
+              These Terms of Service shall be governed by and construed in accordance with the laws of the jurisdiction in which Fi Q operates, without regard to its conflict of law provisions. Any disputes arising from these terms shall be resolved in the courts of that jurisdiction.
             </p>
           </section>
 
@@ -239,7 +239,7 @@ const TermsOfService: React.FC = () => {
 
           <section className="pt-8 border-t border-border">
             <p className="text-sm italic">
-              By using Fi-Q, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
+              By using Fi Q, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
             </p>
           </section>
         </div>
