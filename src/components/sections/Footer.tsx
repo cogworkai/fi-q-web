@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 export const Footer: React.FC = () => {
-  return <footer className="w-full bg-[#FDFDFD] border-t-2 border-[#080808] mt-24 py-16">
+  return <footer className="w-full bg-[#FDFDFD] border-t-2 border-[#080808] mt-24">
       <div className="max-w-[1400px] mx-auto px-5">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        {/* <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="col-span-1 md:col-span-2">
             <div className="mb-6 flex items-center">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-3">
@@ -31,16 +31,6 @@ export const Footer: React.FC = () => {
                   Download
                 </Link>
               </li>
-              <li>
-                <Link to="#" className="text-[#080808] font-light hover:text-[#FFC726]">
-                  Security
-                </Link>
-              </li>
-              <li>
-                <Link to="#" className="text-[#080808] font-light hover:text-[#FFC726]">
-                  Updates
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -54,12 +44,6 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="#" className="text-[#080808] font-light hover:text-[#FFC726]">
-                  Blog
-                </Link>
-              </li>
-              
-              <li>
-                <Link to="#" className="text-[#080808] font-light hover:text-[#FFC726]">
                   Contact
                 </Link>
               </li>
@@ -67,11 +51,11 @@ export const Footer: React.FC = () => {
               
             </ul>
           </div>
-        </div>
+        </div> */}
 
-        <div className="mt-16 pt-8 border-t border-[#080808] flex flex-col md:flex-row justify-between items-center">
+        <div className="m-4 py-4  flex flex-col md:flex-row justify-between items-center">
           <p className="text-[#080808] font-light mb-4 md:mb-0">
-            © {new Date().getFullYear()} Fi-Q. All rights reserved.
+            © {new Date().getFullYear()} cogworkAI. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link to="/privacy" className="text-[#080808] font-light hover:text-[#FFC726]">
