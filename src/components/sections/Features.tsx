@@ -1,6 +1,6 @@
 import React from "react";
 import FeatureCard from "@/components/ui/FeatureCard";
-import { Brain, Shield, Target, Zap } from "lucide-react";
+import { Brain, Shield, Target, Search, Bot } from "lucide-react";
 
 export const Features: React.FC = () => {
   const features = [
@@ -9,14 +9,14 @@ export const Features: React.FC = () => {
       title: "Smart Categorization",
       description:
         "Fi Q learns your spending patterns and automatically categorizes transactions. No more tedious manual entry—just clarity about where your money goes.",
-      icon: <Brain className="w-12 h-12" />,
+      icon: <Bot className="w-12 h-12" />,
     },
     {
       id: 2,
       title: "Subscription Detective",
       description:
         "Fi Q flags unwanted subscriptions and recurring charges you might have forgotten about, helping you eliminate expenses you don't need.",
-      icon: <Zap className="w-12 h-12" />,
+      icon: <Search className="w-12 h-12" />,
     },
     {
       id: 3,
@@ -27,9 +27,9 @@ export const Features: React.FC = () => {
     },
     {
       id: 4,
-      title: "100% Private",
+      title: "Privacy First",
       description:
-        "Your financial data is yours alone. Fi Q never sells your information or mines your data to push products. Open source and completely private.",
+        "Your financial data is yours alone. Fi Q never sells your information or mines your data to push products. Don't take our word for it; audit the app yourself. We're open source software.",
       icon: <Shield className="w-12 h-12" />,
     },
   ];
