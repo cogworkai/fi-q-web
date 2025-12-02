@@ -51,9 +51,19 @@ export const WaitlistDialog: React.FC<WaitlistDialogProps> = ({ open, onOpenChan
           throw error;
         }
       } else {
+        // Send confirmation email
+        try {
+          await supabase.functions.invoke('send-waitlist-confirmation', {
+            body: { email: validation.data.email }
+          });
+        } catch (emailError) {
+          console.error("Failed to send confirmation email:", emailError);
+          // Don't fail the whole flow if email fails
+        }
+        
         toast({
           title: "Success!",
-          description: "You've been added to the waitlist. We'll be in touch soon!",
+          description: "You've been added to the waitlist. Check your email for confirmation!",
         });
         setEmail("");
         onOpenChange(false);
