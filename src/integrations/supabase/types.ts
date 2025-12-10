@@ -45,16 +45,19 @@ export type Database = {
         Row: {
           created_at: string
           email: string
+          enrolled_beta: boolean
           id: string
         }
         Insert: {
           created_at?: string
           email: string
+          enrolled_beta?: boolean
           id?: string
         }
         Update: {
           created_at?: string
           email?: string
+          enrolled_beta?: boolean
           id?: string
         }
         Relationships: []
@@ -64,7 +67,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      check_waitlist_access: { Args: { check_email: string }; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
