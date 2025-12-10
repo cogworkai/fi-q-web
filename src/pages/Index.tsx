@@ -4,10 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import Features from "@/components/sections/Features";
 import Footer from "@/components/sections/Footer";
-
-// Finance dashboard image URL - replace with actual Fi-Q app image in production
-const heroImageUrl =
-  "https://cdn.builder.io/api/v1/image/assets/TEMP/cdaeea5cb03fa0184784e428de3e074cc6ba6657?placeholderIfAbsent=true";
+import homePageImage from "@/assets/home-page.png";
 
 const Index: React.FC = () => {
   return (
@@ -27,7 +24,7 @@ const Index: React.FC = () => {
           <div className="w-full max-w-[1920px]">
             <div className="flex flex-col items-center">
               <Navbar />
-              <Hero heroImageUrl={heroImageUrl} />
+              <Hero heroImageUrl={homePageImage} />
               <Features />
               <Footer />
             </div>

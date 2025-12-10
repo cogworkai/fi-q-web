@@ -67,7 +67,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      check_waitlist_access: { Args: { check_email: string }; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
