@@ -4,10 +4,14 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import Features from "@/components/sections/Features";
 import Footer from "@/components/sections/Footer";
+import homePageImage from "@/assets/home-page.png";
+import dashboardPageImage from "@/assets/dashboard-page-1.png";
 
-// Finance dashboard image URL - replace with actual Fi Q app image in production
-const heroImageUrl =
-  "https://cdn.builder.io/api/v1/image/assets/TEMP/cdaeea5cb03fa0184784e428de3e074cc6ba6657?placeholderIfAbsent=true";
+// Add more images here as they become available
+const heroImages = [
+  homePageImage,
+  dashboardPageImage,
+];
 
 const Index: React.FC = () => {
   return (
@@ -26,8 +30,8 @@ const Index: React.FC = () => {
         <div className="relative z-10 flex flex-col items-center">
           <div className="w-full max-w-[1920px]">
             <div className="flex flex-col items-center">
-              {/* <Navbar /> */}
-              <Hero heroImageUrl={heroImageUrl} />
+              <Navbar />
+              <Hero heroImages={heroImages} />
               <Features />
               <Footer />
             </div>
