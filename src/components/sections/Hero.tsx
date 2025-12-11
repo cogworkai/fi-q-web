@@ -1,15 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import CustomButton from "@/components/ui/CustomButton";
 import { useABTest } from "@/hooks/useABTest";
 import { WaitlistDialog } from "@/components/ui/WaitlistDialog";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 interface HeroProps {
-  heroImageUrl: string;
+  heroImages: string[];
 }
 
-export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
+export const Hero: React.FC<HeroProps> = ({ heroImages }) => {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
   const variant = useABTest({ testName: 'hero_headline', variants: ['A', 'B'] });
+
+  useEffect(() => {
+    if (!api) return;
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  const scrollTo = useCallback((index: number) => {
+    api?.scrollTo(index);
+  }, [api]);
 
   const headlines = {
     A: {
@@ -92,12 +119,50 @@ export const Hero: React.FC<HeroProps> = ({ heroImageUrl }) => {
       
       <div className="relative z-10 w-full max-w-[1400px] mx-auto mt-12 px-5 animate-slide-up" style={{ animationDelay: '0.8s' }}>
         <div className="glass-effect rounded-3xl p-2 shadow-elegant">
-          <img
-            src={heroImageUrl}
-            alt="Fi Q app dashboard showing intelligent expense categorization and insights"
-            className="w-full h-auto rounded-2xl"
-          />
+          <Carousel
+            opts={{ loop: true }}
+            plugins={[
+              Autoplay({
+                delay: 4000,
+                stopOnInteraction: false,
+              }),
+            ]}
+            setApi={setApi}
+            className="w-full"
+          >
+            <CarouselContent>
+              {heroImages.map((image, index) => (
+                <CarouselItem key={index}>
+                  <img
+                    src={image}
+                    alt={`Fi-Q app dashboard screenshot ${index + 1}`}
+                    className="w-full h-auto rounded-2xl"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4 bg-background/80 backdrop-blur-sm border-border/50 hover:bg-background" />
+            <CarouselNext className="right-4 bg-background/80 backdrop-blur-sm border-border/50 hover:bg-background" />
+          </Carousel>
         </div>
+        
+        {/* Navigation dots */}
+        {count > 1 && (
+          <div className="flex justify-center gap-2 mt-4">
+            {Array.from({ length: count }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollTo(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  index === current 
+                    ? "bg-primary w-8" 
+                    : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
       
       <WaitlistDialog open={isWaitlistOpen} onOpenChange={setIsWaitlistOpen} />
