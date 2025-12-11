@@ -6,6 +6,7 @@ import Features from "@/components/sections/Features";
 import Footer from "@/components/sections/Footer";
 import homePageImage from "@/assets/home-page.png";
 import dashboardPageImage from "@/assets/dashboard-page-1.png";
+import fiqPageImage from "@/assets/fi-q.png";
 
 // Add more images here as they become available
 const heroImages = [
