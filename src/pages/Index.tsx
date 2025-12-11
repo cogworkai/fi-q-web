@@ -10,7 +10,7 @@ import dashboardPageImage from "@/assets/dashboard-page-1.png";
 // Add more images here as they become available
 const heroImages = [
   homePageImage,
-  dashboardPageImage,
+  // dashboardPageImage,
 ];
 
 const Index: React.FC = () => {
@@ -30,7 +30,7 @@ const Index: React.FC = () => {
         <div className="relative z-10 flex flex-col items-center">
           <div className="w-full max-w-[1920px]">
             <div className="flex flex-col items-center">
-              <Navbar />
+              {/* <Navbar /> */}
               <Hero heroImages={heroImages} />
               <Features />
               <Footer />

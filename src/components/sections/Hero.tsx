@@ -123,8 +123,8 @@ export const Hero: React.FC<HeroProps> = ({ heroImages }) => {
             opts={{ loop: true }}
             plugins={[
               Autoplay({
-                delay: 4000,
-                stopOnInteraction: false,
+                delay: 8000,
+                stopOnInteraction: true,
               }),
             ]}
             setApi={setApi}
