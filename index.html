@@ -16,8 +16,13 @@
 
   <body>
     <div id="root"></div>
+    <script>
+      // Workaround: define __WS_TOKEN__ to prevent ReferenceError in Vite client
+      // This token is normally injected at build-time by the dev environment.
+      var __WS_TOKEN__ = "";
+    </script>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <!-- <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script> -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
