@@ -5,11 +5,13 @@ import Hero from "@/components/sections/Hero";
 import Features from "@/components/sections/Features";
 import Footer from "@/components/sections/Footer";
 import homePageImage from "@/assets/home-page.png";
+import dashboardPageImage from "@/assets/dashboard-page-1.png";
+import fiqPageImage from "@/assets/fi-q.png";
 
 // Add more images here as they become available
 const heroImages = [
   homePageImage,
-  "https://cdn.builder.io/api/v1/image/assets/TEMP/cdaeea5cb03fa0184784e428de3e074cc6ba6657?placeholderIfAbsent=true",
+  // dashboardPageImage,
 ];
 
 const Index: React.FC = () => {
