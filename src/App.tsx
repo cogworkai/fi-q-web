@@ -7,16 +7,20 @@ import Index from "./pages/Index";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
+import Auth from "./pages/Auth";
+import { AuthProvider } from "./contexts/AuthContext";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <AuthProvider>
       <Toaster />
       <Sonner />
       <HashRouter>
         <Routes>
+          <Route path="/auth" element={<Auth />} />
           <Route path="/" element={<Index />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
@@ -24,6 +28,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </HashRouter>
+      </AuthProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
