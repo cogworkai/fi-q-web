@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import previewPage from "@/assets/fi-q.png";
 
 const NotFound = () => {
   const location = useLocation();
@@ -18,6 +19,7 @@ const NotFound = () => {
         <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
         <a href="/" className="text-blue-500 hover:text-blue-700 underline">
           Return to Home
+          <img src={previewPage} alt="Fi Q" className="mx-auto mt-4 w-32 h-32" />
         </a>
       </div>
     </div>
