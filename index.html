@@ -16,6 +16,11 @@
 
   <body>
     <div id="root"></div>
+    <script>
+      // Workaround: define __WS_TOKEN__ so Vite dev client doesn't crash when missing.
+      // This should be safe and only applies during development.
+      var __WS_TOKEN__ = window.__WS_TOKEN__ || "";
+    </script>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <!-- <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script> -->
     <script type="module" src="/src/main.tsx"></script>
