@@ -99,7 +99,11 @@ const Profile = () => {
       <header className="border-b border-border/50 bg-background/80 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
-            Fi Q
+            <img 
+                src="/fi-q-512.svg" 
+                alt="Fi Q Logo" 
+                className="h-12 w-auto"
+            />
           </Link>
           <Button variant="ghost" onClick={handleSignOut}>
             Sign Out
