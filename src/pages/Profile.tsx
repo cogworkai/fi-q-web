@@ -7,7 +7,8 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useToast } from '@/hooks/use-toast';
-import { User, Mail, Save } from 'lucide-react';
+import { User, Mail, Save, Shield } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 
 interface Profile {
@@ -17,34 +18,49 @@ interface Profile {
   avatar_url: string | null;
 }
 
+type AppRole = 'admin' | 'user';
+
 const Profile = () => {
   const { user, signOut } = useAuth();
   const { toast } = useToast();
   const [profile, setProfile] = useState<Profile | null>(null);
   const [fullName, setFullName] = useState('');
+  const [userRole, setUserRole] = useState<AppRole | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    const fetchProfile = async () => {
+    const fetchProfileAndRole = async () => {
       if (!user) return;
 
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('id', user.id)
-        .single();
+      const [profileResult, roleResult] = await Promise.all([
+        supabase
+          .from('profiles')
+          .select('*')
+          .eq('id', user.id)
+          .single(),
+        supabase
+          .from('user_roles')
+          .select('role')
+          .eq('user_id', user.id)
+          .single()
+      ]);
 
-      if (error) {
-        console.error('Error fetching profile:', error);
+      if (profileResult.error) {
+        console.error('Error fetching profile:', profileResult.error);
       } else {
-        setProfile(data);
-        setFullName(data.full_name || '');
+        setProfile(profileResult.data);
+        setFullName(profileResult.data.full_name || '');
       }
+
+      if (!roleResult.error && roleResult.data) {
+        setUserRole(roleResult.data.role as AppRole);
+      }
+
       setLoading(false);
     };
 
-    fetchProfile();
+    fetchProfileAndRole();
   }, [user]);
 
   const handleSave = async () => {
@@ -130,7 +146,15 @@ const Profile = () => {
                   </AvatarFallback>
                 </Avatar>
                 <div>
-                  <CardTitle className="text-xl">{profile?.full_name || 'User'}</CardTitle>
+                  <div className="flex items-center gap-2">
+                    <CardTitle className="text-xl">{profile?.full_name || 'User'}</CardTitle>
+                    {userRole && (
+                      <Badge variant={userRole === 'admin' ? 'default' : 'secondary'} className="flex items-center gap-1">
+                        {userRole === 'admin' && <Shield className="h-3 w-3" />}
+                        {userRole}
+                      </Badge>
+                    )}
+                  </div>
                   <CardDescription className="flex items-center gap-1">
                     <Mail className="h-3 w-3" />
                     {profile?.email || user?.email}
