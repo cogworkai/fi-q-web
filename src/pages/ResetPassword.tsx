@@ -25,7 +25,7 @@ const ResetPassword = () => {
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         toast.error("Invalid or expired reset link. Please request a new one.");
-        // navigate('/auth');
+        navigate('/auth');
       }
     };
     checkSession();
