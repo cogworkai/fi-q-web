@@ -10,14 +10,7 @@ export const Navbar: React.FC = () => {
     <nav className="relative z-20 w-full py-6 px-8">
       <div className="max-w-[1920px] mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          {/* <img 
-            src="/fi-q-512.svg" 
-            alt="Fi Q Logo" 
-            className="h-12 w-auto"
-          />
-          <span className="font-['Lexend'] text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary">
-            Fi Q
-          </span> */}
+          {/* Logo placeholder */}
         </Link>
         <div className="flex items-center gap-6">
             {user ? (
@@ -41,4 +34,5 @@ export const Navbar: React.FC = () => {
     </nav>
   );
 };
+
 export default Navbar;
