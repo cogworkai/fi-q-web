@@ -20,16 +20,19 @@ const AdminRoute = ({ children }: AdminRouteProps) => {
         return;
       }
 
-      const { data, error } = await supabase.rpc('has_role', {
-        _user_id: user.id,
-        _role: 'admin'
-      });
+      // Use raw query to avoid type issues until types regenerate
+      const { data, error } = await supabase
+        .from('user_roles')
+        .select('id')
+        .eq('user_id', user.id)
+        .eq('role', 'admin')
+        .maybeSingle();
 
       if (error) {
         console.error("Error checking admin role:", error);
         setIsAdmin(false);
       } else {
-        setIsAdmin(data);
+        setIsAdmin(!!data);
       }
       setCheckingRole(false);
     };
