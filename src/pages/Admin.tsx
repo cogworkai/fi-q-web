@@ -42,10 +42,12 @@ const Admin = () => {
     fetchWaitlist();
   }, []);
 
-  const toggleEnrollment = async (id: string, currentStatus: boolean) => {
+  const toggleEnrollment = async (id: string, email: string, currentStatus: boolean) => {
+    const newStatus = !currentStatus;
+    
     const { error } = await supabase
       .from("waitlist")
-      .update({ enrolled_beta: !currentStatus })
+      .update({ enrolled_beta: newStatus })
       .eq("id", id);
 
     if (error) {
@@ -54,13 +56,35 @@ const Admin = () => {
         description: "Failed to update enrollment status",
         variant: "destructive",
       });
+      return;
+    }
+
+    // Send beta enrollment email when enrolling
+    if (newStatus) {
+      try {
+        await supabase.functions.invoke("send-waitlist-confirmation", {
+          body: { email, type: "beta_enrollment" },
+        });
+        toast({
+          title: "Success",
+          description: "User enrolled in beta and invitation email sent",
+        });
+      } catch (emailError) {
+        console.error("Failed to send enrollment email:", emailError);
+        toast({
+          title: "Enrolled",
+          description: "User enrolled but email failed to send",
+          variant: "destructive",
+        });
+      }
     } else {
       toast({
         title: "Success",
-        description: `User ${!currentStatus ? "enrolled in" : "removed from"} beta`,
+        description: "User removed from beta",
       });
-      fetchWaitlist();
     }
+
+    fetchWaitlist();
   };
 
   const deleteEntry = async (id: string) => {
@@ -133,7 +157,7 @@ const Admin = () => {
                           <Button
                             variant={entry.enrolled_beta ? "outline" : "default"}
                             size="sm"
-                            onClick={() => toggleEnrollment(entry.id, entry.enrolled_beta)}
+                            onClick={() => toggleEnrollment(entry.id, entry.email, entry.enrolled_beta)}
                           >
                             {entry.enrolled_beta ? (
                               <>
