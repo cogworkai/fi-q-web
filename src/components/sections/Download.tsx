@@ -9,7 +9,7 @@ const Download: React.FC = () => {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <DownloadIcon className="h-5 w-5 text-primary" />
-          Download Fi-Q
+          Download Fi Q
         </CardTitle>
         <CardDescription>
           Take control of your finances with our desktop app
@@ -24,7 +24,7 @@ const Download: React.FC = () => {
         >
           <Button className="gap-2">
             <DownloadIcon className="h-4 w-4" />
-            Download for macOS (Apple Silicon)
+            Download macOS (Apple Silicon)
           </Button>
         </a>
         <p className="text-sm text-muted-foreground">
