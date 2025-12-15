@@ -78,6 +78,7 @@ const Admin = () => {
         });
       }
     } else {
+      if (!currentStatus) send_invite(email);
       toast({
         title: "Success",
         description: "User removed from beta",
@@ -108,6 +109,30 @@ const Admin = () => {
     }
   };
 
+  const send_invite = async (email: string, name?: string) => {
+    const { data, error } = await supabase.functions.invoke("send-beta-invite", {
+      body: {
+        email,
+        metadata: { name },
+      },
+    });
+    console.log(data);
+    if (error) {
+      toast({
+        title: "Error",
+        description: error.message ?? "Failed to send invite email",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    toast({
+      title: "Success",
+      description: `User ${email} sent beta invite.`,
+    });
+
+  };
+
   return (
     <div className="min-h-screen bg-background p-8">
       <div className="max-w-6xl mx-auto">
@@ -135,7 +160,7 @@ const Admin = () => {
                 <TableHeader>
                   <TableRow>
                     <TableHead>Email</TableHead>
-                    <TableHead>Signed Up</TableHead>
+                    <TableHead>Sign Up Date</TableHead>
                     <TableHead>Status</TableHead>
                     <TableHead className="text-right">Actions</TableHead>
                   </TableRow>
@@ -149,7 +174,7 @@ const Admin = () => {
                       </TableCell>
                       <TableCell>
                         <Badge variant={entry.enrolled_beta ? "default" : "secondary"}>
-                          {entry.enrolled_beta ? "Enrolled" : "Pending"}
+                          {entry.enrolled_beta ? "Enrolled In Beta" : "Wait listed"}
                         </Badge>
                       </TableCell>
                       <TableCell className="text-right">
@@ -167,7 +192,7 @@ const Admin = () => {
                             ) : (
                               <>
                                 <Check className="h-4 w-4 mr-1" />
-                                Enroll
+                                Invite
                               </>
                             )}
                           </Button>
