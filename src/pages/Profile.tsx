@@ -10,6 +10,7 @@ import { useToast } from '@/hooks/use-toast';
 import { User, Mail, Save, Shield } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import Download from '@/components/sections/Download';
 
 interface Profile {
   id: string;
@@ -203,6 +204,9 @@ const Profile = () => {
               </Button>
             </CardContent>
           </Card>
+
+          {/* Download Section */}
+          <Download />
         </div>
       </main>
     </div>
