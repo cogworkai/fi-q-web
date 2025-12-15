@@ -4,7 +4,6 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import Features from "@/components/sections/Features";
 import Footer from "@/components/sections/Footer";
-import Download from "@/components/sections/Download";
 import homePageImage from "@/assets/home-page.png";
 import dashboardPageImage from "@/assets/dashboard-page-1.png";
 import fiqPageImage from "@/assets/fi-q.png";
@@ -35,7 +34,6 @@ const Index: React.FC = () => {
               <Navbar />
               <Hero heroImages={heroImages} />
               <Features />
-              <Download />
               <Footer />
             </div>
           </div>
