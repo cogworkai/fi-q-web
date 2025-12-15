@@ -1,5 +1,6 @@
 {
   "name": "fi-q-web",
+  "homepage": "https://fi-q.com",
   "private": true,
   "version": "0.1.0",
   "type": "module",
