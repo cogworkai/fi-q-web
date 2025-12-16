@@ -28,7 +28,7 @@ const Profile = () => {
   const [fullName, setFullName] = useState('');
   const [userRole, setUserRole] = useState<AppRole | null>(null);
   const [loading, setLoading] = useState(true);
-  const [saving, setSaving] = useState(false);
+//   const [saving, setSaving] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [newPassword, setNewPassword] = useState("");
@@ -69,29 +69,29 @@ const Profile = () => {
     fetchProfileAndRole();
   }, [user]);
 
-  const handleSave = async () => {
-    if (!user) return;
+//   const handleSave = async () => {
+//     if (!user) return;
 
-    setSaving(true);
-    const { error } = await supabase
-      .from('profiles')
-      .update({ full_name: fullName, updated_at: new Date().toISOString() })
-      .eq('id', user.id);
+//     setSaving(true);
+//     const { error } = await supabase
+//       .from('profiles')
+//       .update({ full_name: fullName, updated_at: new Date().toISOString() })
+//       .eq('id', user.id);
 
-    if (error) {
-      toast({
-        title: 'Error',
-        description: 'Failed to update profile. Please try again.',
-        variant: 'destructive',
-      });
-    } else {
-      toast({
-        title: 'Success',
-        description: 'Your profile has been updated.',
-      });
-    }
-    setSaving(false);
-  };
+//     if (error) {
+//       toast({
+//         title: 'Error',
+//         description: 'Failed to update profile. Please try again.',
+//         variant: 'destructive',
+//       });
+//     } else {
+//       toast({
+//         title: 'Success',
+//         description: 'Your profile has been updated.',
+//       });
+//     }
+//     setSaving(false);
+//   };
 
   const handleSignOut = async () => {
     await signOut();
@@ -220,50 +220,6 @@ const Profile = () => {
             </CardHeader>
           </Card>
 
-          {/* Download Section */}
-          <Download />
-
-          {/* Edit Profile Card */}
-          <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <User className="h-5 w-5 text-primary" />
-                Personal Information
-              </CardTitle>
-              <CardDescription>Update your personal details</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={profile?.email || user?.email || ''}
-                  disabled
-                  className="bg-muted/50"
-                />
-                <p className="text-xs text-muted-foreground">Email cannot be changed</p>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="fullName">Full Name</Label>
-                <Input
-                  id="fullName"
-                  type="text"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  placeholder="Enter your full name"
-                />
-              </div>
-
-              <Button onClick={handleSave} disabled={saving} className="w-full sm:w-auto">
-                <Save className="h-4 w-4 mr-2" />
-                {saving ? 'Saving...' : 'Save Changes'}
-              </Button>
-            </CardContent>
-          </Card>
-
-          
 
           {/* Change Password */}
           <Card className="border-border/50 bg-card/50 backdrop-blur-sm">

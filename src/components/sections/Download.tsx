@@ -17,7 +17,7 @@ const Download: React.FC = () => {
       </CardHeader>
       <CardContent className="space-y-4">
         <a
-          href="https://github.com/cogworkai/fi-q-desktop/releases/download/untagged-23b678ddea97836659cd/Fi.Q-0.3.0-arm64.dmg"
+          href="https://github.com/cogworkai/fi-q-desktop/releases/download/untagged-5dbfed7c3e5848d63bfd/Fi.Q-0.3.0-arm64.dmg"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block"

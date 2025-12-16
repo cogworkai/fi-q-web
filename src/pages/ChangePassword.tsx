@@ -9,8 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useToast } from '@/hooks/use-toast';
 import { User, Mail, Save, Shield, Loader2, Check, Eye, EyeOff } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { Link } from 'react-router-dom';
-import Download from '@/components/sections/Download';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface Profile {
   id: string;
@@ -23,12 +22,13 @@ type AppRole = 'admin' | 'user';
 
 const Profile = () => {
   const { user, signOut } = useAuth();
+  const navigate = useNavigate();
   const { toast } = useToast();
   const [profile, setProfile] = useState<Profile | null>(null);
   const [fullName, setFullName] = useState('');
   const [userRole, setUserRole] = useState<AppRole | null>(null);
   const [loading, setLoading] = useState(true);
-  const [saving, setSaving] = useState(false);
+//   const [saving, setSaving] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [newPassword, setNewPassword] = useState("");
@@ -68,30 +68,6 @@ const Profile = () => {
 
     fetchProfileAndRole();
   }, [user]);
-
-  const handleSave = async () => {
-    if (!user) return;
-
-    setSaving(true);
-    const { error } = await supabase
-      .from('profiles')
-      .update({ full_name: fullName, updated_at: new Date().toISOString() })
-      .eq('id', user.id);
-
-    if (error) {
-      toast({
-        title: 'Error',
-        description: 'Failed to update profile. Please try again.',
-        variant: 'destructive',
-      });
-    } else {
-      toast({
-        title: 'Success',
-        description: 'Your profile has been updated.',
-      });
-    }
-    setSaving(false);
-  };
 
   const handleSignOut = async () => {
     await signOut();
@@ -143,6 +119,7 @@ const Profile = () => {
         // setCurrentPassword("");
         setNewPassword("");
         setConfirmPassword("");
+        navigate('/profile');
       } catch (error: any) {
         toast({
           title: "Error",
@@ -174,12 +151,12 @@ const Profile = () => {
                 className="h-12 w-auto"
             />
           </Link>
-          <Link to="/admin" className="text-sm text-muted-foreground hover:text-foreground transition-colors mr-4">
+          {/* <Link to="/admin" className="text-sm text-muted-foreground hover:text-foreground transition-colors mr-4">
             Admin Panel
           </Link>
           <Button variant="ghost" onClick={handleSignOut}>
             Sign Out
-          </Button>
+          </Button> */}
         </div>
       </header>
 
@@ -220,50 +197,6 @@ const Profile = () => {
             </CardHeader>
           </Card>
 
-          {/* Download Section */}
-          <Download />
-
-          {/* Edit Profile Card */}
-          <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <User className="h-5 w-5 text-primary" />
-                Personal Information
-              </CardTitle>
-              <CardDescription>Update your personal details</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={profile?.email || user?.email || ''}
-                  disabled
-                  className="bg-muted/50"
-                />
-                <p className="text-xs text-muted-foreground">Email cannot be changed</p>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="fullName">Full Name</Label>
-                <Input
-                  id="fullName"
-                  type="text"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  placeholder="Enter your full name"
-                />
-              </div>
-
-              <Button onClick={handleSave} disabled={saving} className="w-full sm:w-auto">
-                <Save className="h-4 w-4 mr-2" />
-                {saving ? 'Saving...' : 'Save Changes'}
-              </Button>
-            </CardContent>
-          </Card>
-
-          
 
           {/* Change Password */}
           <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
