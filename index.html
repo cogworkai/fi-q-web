@@ -22,6 +22,10 @@
       // Workaround: define __WS_TOKEN__ so Vite dev client doesn't crash when missing.
       // This should be safe and only applies during development.
       var __WS_TOKEN__ = window.__WS_TOKEN__ || "";
+      if (window.location.hash.startsWith("#/")) {
+        const newPath = window.location.hash.slice(2);
+        window.history.replaceState(null, "", "/" + newPath);
+      }
     </script>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <!-- <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script> -->
