@@ -4,11 +4,16 @@
     <meta charset="utf-8" />
     <title>Redirecting...</title>
     <script>
-      const redirectTo = window.location.pathname + window.location.search + window.location.hash;
-      console.log("Redirecting to:", redirectTo);
-      window.location.replace(
-        "/?redirect=" + encodeURIComponent(redirectTo)
-      );
+      (function () {
+        var path =
+          window.location.pathname +
+          window.location.search +
+          window.location.hash;
+
+        window.location.replace(
+          window.location.origin + "/#/" + path.replace(/^\/+/, "")
+        );
+      })();
     </script>
   </head>
   <body></body>
