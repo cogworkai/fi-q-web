@@ -10,6 +10,9 @@
           window.location.search +
           window.location.hash;
 
+
+        console.log("Redirecting to SPA route:", path);
+
         window.location.replace(
           window.location.origin + "/#/" + path.replace(/^\/+/, "")
         );
