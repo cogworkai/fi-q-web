@@ -62,9 +62,15 @@ const Admin = () => {
     // Send beta enrollment email when enrolling
     if (newStatus) {
       try {
-        await supabase.functions.invoke("send-waitlist-confirmation", {
-          body: { email, type: "beta_enrollment" },
+        await supabase.functions.invoke('send-beta-invite', {
+          body: {
+            email,
+            metadata: {},
+          },
         });
+        // await supabase.functions.invoke("send-waitlist-confirmation", {
+          // body: { email, type: "beta_enrollment" },
+        // });
         toast({
           title: "Success",
           description: "User enrolled in beta and invitation email sent",

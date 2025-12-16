@@ -5,6 +5,7 @@
     <title>Redirecting...</title>
     <script>
       const redirectTo = window.location.pathname + window.location.search + window.location.hash;
+      console.log("Redirecting to:", redirectTo);
       window.location.replace(
         "/?redirect=" + encodeURIComponent(redirectTo)
       );
