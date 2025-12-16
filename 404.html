@@ -4,19 +4,11 @@
     <meta charset="utf-8" />
     <title>Redirecting...</title>
     <script>
-      (function () {
-        var path =
-          window.location.pathname +
-          window.location.search +
-          window.location.hash;
-
-
-        console.log("Redirecting to SPA route:", path);
-
-        window.location.replace(
-          window.location.origin + "/#/" + path.replace(/^\/+/, "")
-        );
-      })();
+      const redirectTo = window.location.pathname + window.location.search + window.location.hash;
+      console.log("Redirecting to:", redirectTo);
+      window.location.replace(
+        "/?redirect=" + encodeURIComponent(redirectTo)
+      );
     </script>
   </head>
   <body></body>
