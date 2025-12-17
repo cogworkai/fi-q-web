@@ -9,6 +9,7 @@ import { AlertCircle, CheckCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import Logo from '@/components/ui/logo';
 import { supabase } from '@/integrations/supabase/client';
+import { useAuth } from '@/contexts/AuthContext';
 
 const ResetPassword = () => {
   const [password, setPassword] = useState('');
@@ -16,6 +17,7 @@ const ResetPassword = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
+  const { clearPasswordReset } = useAuth();
   
   const navigate = useNavigate();
 
@@ -56,6 +58,7 @@ const ResetPassword = () => {
       setSuccess(true);
       toast.success("Password updated successfully!");
       setTimeout(() => {
+        clearPasswordReset();
         navigate('/profile');
       }, 2000);
     }

@@ -22,7 +22,7 @@ interface Profile {
 type AppRole = 'admin' | 'user';
 
 const Profile = () => {
-  const { user, signOut } = useAuth();
+  const { user, signOut, clearPasswordReset } = useAuth();
   const { toast } = useToast();
   const [profile, setProfile] = useState<Profile | null>(null);
   const [fullName, setFullName] = useState('');
@@ -68,30 +68,6 @@ const Profile = () => {
 
     fetchProfileAndRole();
   }, [user]);
-
-//   const handleSave = async () => {
-//     if (!user) return;
-
-//     setSaving(true);
-//     const { error } = await supabase
-//       .from('profiles')
-//       .update({ full_name: fullName, updated_at: new Date().toISOString() })
-//       .eq('id', user.id);
-
-//     if (error) {
-//       toast({
-//         title: 'Error',
-//         description: 'Failed to update profile. Please try again.',
-//         variant: 'destructive',
-//       });
-//     } else {
-//       toast({
-//         title: 'Success',
-//         description: 'Your profile has been updated.',
-//       });
-//     }
-//     setSaving(false);
-//   };
 
   const handleSignOut = async () => {
     await signOut();
@@ -141,6 +117,7 @@ const Profile = () => {
 
         // Clear password fields
         // setCurrentPassword("");
+        clearPasswordReset();
         setNewPassword("");
         setConfirmPassword("");
       } catch (error: any) {

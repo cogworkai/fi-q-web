@@ -11,6 +11,8 @@ interface AuthContextType {
   signIn: (email: string, password: string) => Promise<{ error: any }>;
   signOut: () => Promise<{ error: any }>;
   loading: boolean;
+  mustResetPassword: boolean;
+  clearPasswordReset: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -28,7 +30,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
+  const [mustResetPassword, setMustResetPassword] = useState(false);
   const location = useLocation();
+
+  const clearPasswordReset = () => {
+    setMustResetPassword(false);
+  };
 
   useEffect(() => {
     let isMounted = true;
@@ -57,8 +64,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setUser(session?.user ?? null);
         setLoading(false);
 
-        if (event === 'PASSWORD_RECOVERY') {
-          navigate('/change-password', { replace: true });
+        if (event === 'PASSWORD_RECOVERY' || session?.user?.last_sign_in_at === null) {
+          setMustResetPassword(true);
+          navigate('/reset-password', { replace: true });
         }
       }
     );
@@ -77,8 +85,16 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     };
   }, [navigate, location.key]);
 
+  useEffect(() => {
+    if (!mustResetPassword) return;
+
+    if (location.pathname !== '/reset-password') {
+      navigate('/reset-password', { replace: true });
+    }
+  }, [mustResetPassword, location.pathname, navigate]);
+
   const signUp = async (email: string, password: string, fullName?: string) => {
-    const redirectUrl = `${window.location.origin}/`;
+    const redirectUrl = `${window.location.origin}/profile`;
     
     const { error } = await supabase.auth.signUp({
       email,
@@ -110,7 +126,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     signUp,
     signIn,
     signOut,
-    loading
+    loading,
+    mustResetPassword,
+    clearPasswordReset: clearPasswordReset,
   };
 
   return (
