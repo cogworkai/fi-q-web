@@ -80,7 +80,7 @@ const ResetPassword = () => {
                 <CheckCircle className="h-12 w-12 text-green-500" />
                 <h2 className="text-xl font-semibold">Password Updated!</h2>
                 <p className="text-muted-foreground">
-                  Your password has been successfully updated. Redirecting...
+                  Your password was successfully updated. Redirecting...
                 </p>
               </div>
             </CardContent>
@@ -101,7 +101,7 @@ const ResetPassword = () => {
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl text-center">Set New Password</CardTitle>
             <CardDescription className="text-center">
-              Enter your new password below
+              Enter a new password to continue.
             </CardDescription>
           </CardHeader>
           <CardContent>
