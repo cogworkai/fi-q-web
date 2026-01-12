@@ -151,9 +151,9 @@ const Profile = () => {
                 className="h-12 w-auto"
             />
           </Link>
-          <Link to="/admin" className="text-sm text-muted-foreground hover:text-foreground transition-colors mr-4">
+          {/* <Link to="/admin" className="text-sm text-muted-foreground hover:text-foreground transition-colors mr-4">
             Admin Panel
-          </Link>
+          </Link> */}
           <Button variant="ghost" onClick={handleSignOut}>
             Sign Out
           </Button>
