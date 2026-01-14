@@ -19,7 +19,7 @@ const Download: React.FC = () => {
         <div className="flex flex-row justify-around gap-4 flex-wrap">
           <div className="">
           <a
-            href="https://github.com/cogworkai/fi-q-desktop/releases/download/0.3.1-beta.1/Fi.Q-0.3.1-arm64.dmg"
+            href="https://github.com/cogworkai/fi-q-desktop/releases/download/0.3.2-beta.1/Fi.Q-0.3.2-arm64.dmg"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block"
@@ -35,7 +35,7 @@ const Download: React.FC = () => {
           </div>
           <div className="">
             <a
-              href="https://github.com/cogworkai/fi-q-desktop/releases/download/0.3.1-beta.1/Fi.Q.Setup.0.3.1.exe"
+              href="https://github.com/cogworkai/fi-q-desktop/releases/download/0.3.2-beta.1/Fi.Q.Setup.0.3.2.exe"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
