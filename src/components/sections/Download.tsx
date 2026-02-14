@@ -19,7 +19,7 @@ const Download: React.FC = () => {
         <div className="flex flex-row justify-around gap-4 flex-wrap">
           <div className="">
           <a
-            href="https://github.com/cogworkai/fi-q-desktop/releases/download/0.3.2-beta.1/Fi.Q-0.3.2-arm64.dmg"
+            href="https://fi-q-hazel.vercel.app/download/dmg"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block"
@@ -30,12 +30,12 @@ const Download: React.FC = () => {
             </Button>
           </a>
           <p className="text-sm text-muted-foreground text-center">
-            Version 0.3.1 • macOS 11+
+            macOS 10.13+
           </p>
           </div>
           <div className="">
             <a
-              href="https://github.com/cogworkai/fi-q-desktop/releases/download/0.3.2-beta.1/Fi.Q.Setup.0.3.2.exe"
+              href="https://fi-q-hazel.vercel.app/download/windows"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
@@ -46,7 +46,7 @@ const Download: React.FC = () => {
               </Button>
             </a>
             <p className="text-sm text-muted-foreground text-center">
-              Version 0.3.1 • Windows 10+
+              Windows 10+
             </p>
           </div>
         </div>
