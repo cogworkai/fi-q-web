@@ -19,7 +19,7 @@ const Download: React.FC = () => {
         <div className="flex flex-row justify-around gap-4 flex-wrap">
           <div className="">
           <a
-            href="https://fi-q-hazel.vercel.app/download/dmg"
+            href="https://fi-q.vercel.app/download/dmg"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block"
@@ -35,7 +35,7 @@ const Download: React.FC = () => {
           </div>
           <div className="">
             <a
-              href="https://fi-q-hazel.vercel.app/download/windows"
+              href="https://fi-q.vercel.app/download/windows"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
